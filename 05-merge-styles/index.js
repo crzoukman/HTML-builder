@@ -58,7 +58,7 @@ async function remover(from) {
     if (item.isFile()) {
       await fsPromises.unlink(path.join(from, item.name));
     } else {
-      remover(path.join(from, item.name));
+      //remover(path.join(from, item.name));
     };
   };
 };
@@ -74,7 +74,7 @@ async function emptyFolderRemover(from) {
       if (!item.isFile() && info.length === 0) {
         await fsPromises.rmdir(path.join(from, item.name));
       } else if (!item.isFile()) {
-        emptyFolderRemover(path.join(from, item.name));
+        //emptyFolderRemover(path.join(from, item.name));
       };
     };
 
