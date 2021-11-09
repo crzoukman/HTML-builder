@@ -12,7 +12,10 @@ console.log('Hey! Say something below:');
 
 stdin.on('data', (data) => {
   const dataX = data.toString().trim();
-  if (dataX === 'exit') process.exit(0);
+  if (dataX === 'exit') {
+    console.log('You\'re done!');
+    process.exit(0);
+  };
 
   fs.appendFile(path.join(__dirname, 'file.txt'), data, (err) => {
     if (err) throw err;
